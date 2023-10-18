@@ -14,14 +14,14 @@ set border linewidth 1.5
 
 set logscale y
 set format y "10^{%L}"
-set xrange [2006.4:2018.6]
+set xrange [2006.4:2023.0]
 set key samplen 6 spacing 3.0
 set key bottom right
 set grid lw 3
 set ylabel "GB/sec"
 set xlabel "End of Year"
 
-set yrange [10:1200]
+set yrange [10:4200]
 set output "mem-bw.eps"
 set title "Theoretical Peak Memory Bandwidth Comparison"
 
@@ -37,6 +37,8 @@ set label "FirePro W9100"   at 2014,420 center rotate by 30 textcolor rgb "#971c
 set label "FirePro S9150"   at 2015,420 center rotate by 30 textcolor rgb "#971c00"
 set label "MI25"            at 2016,300 center rotate by 30 textcolor rgb "#971c00"
 set label "MI60"            at 2018,800 center rotate by 30 textcolor rgb "#971c00"
+set label "MI100"           at 2020,900 center rotate by 00 textcolor rgb "#971c00"
+set label "MI200"           at 2021,1800 center rotate by 00 textcolor rgb "#971c00"
 
 # Labels Intel
 set label "X5482"         at 2007,20 center rotate by 30 textcolor rgb "#005197"
@@ -62,14 +64,23 @@ set label "Tesla K20X"   at 2013,170 center rotate by 00 textcolor rgb "#00D317"
 set label "Tesla K40"    at 2014.5,245 center rotate by 00 textcolor rgb "#00D317"
 set label "Tesla P100"   at 2016,850 center rotate by 00 textcolor rgb "#00D317"
 set label "Tesla V100"   at 2017,1050 center rotate by 00 textcolor rgb "#00D317"
+set label "Tesla A100"   at 2019.5,2200 center rotate by 00 textcolor rgb "#00D317"
+set label "Tesla H100"   at 2022,2200 center rotate by 00 textcolor rgb "#00D317"
 
 # Labels Xeon Phi
 set label "Xeon Phi 7120 (KNC)" at 2014,190 center rotate by 00
 set label "Xeon Phi 7290 (KNL)" at 2016,450 center rotate by 55
 
+# Labels AMD
+set label "EPYC 7601" at 2017.3,220 center rotate by 00 textcolor 'red'
+set label "EPYC 7642" at 2019.3,250 center rotate by 00 textcolor 'red'
+set label "EPYC 7763" at 2021.3,250 center rotate by 00 textcolor 'red'
+
+
 plot 'data-intel.txt'     using 1:5 with linesp pt  9 ps 3.0 title "INTEL Xeon CPUs", \
      'data-dp-nvidia.txt' using 1:4 with linesp pt  5 ps 3.0 title "NVIDIA Tesla GPUs", \
      'data-amd.txt'       using 1:5 with linesp pt  7 ps 3.0 title "AMD Radeon GPUs", \
-     'data-intel-phi.txt' using 1:5 with linesp pt 11 ps 3.0 title "INTEL Xeon Phis"
+     'data-intel-phi.txt' using 1:5 with linesp pt 11 ps 3.0 title "INTEL Xeon Phis",\
+     'data-amd-epyc.txt'  using 1:5 with linesp pt 13 ps 3.0 linetype rgbcolor 'red' title "AMD EPYCs"
 
 

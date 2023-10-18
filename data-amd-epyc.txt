@@ -1,0 +1,7 @@
+# Data of high-end double precision AMD CPUs over the last years
+#
+#Year   GFLOPs-SP   GFLOPs-DP  Cores  Mem-BW/Socket  TDP   Freq(MHz)  Name
+2017     563        1126      32          171        180   2200       "EPYC 7601"
+2019     1170       2340      64          205        225   2250       "EPYC 7742"
+2021     1255       2509      64          205        280   2450       "EPYC 7763"
+

@@ -14,7 +14,7 @@ set border linewidth 1.5
 
 set logscale y
 set format y "10^{%L}"
-set xrange [2006.4:2018.6]
+set xrange [2006.4:2020.6]
 set key samplen 6 spacing 3.0
 set key bottom right
 set grid lw 3
