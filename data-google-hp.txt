@@ -1,0 +1,7 @@
+# Data of Google TPU over the last years
+# source: https://en.wikipedia.org/wiki/Tensor_Processing_Unit
+#Year   TFLOPs-HP  Mem-BW  TDP  Name
+2016    23         34      75   "TPUv1"
+2017    45         600     280  "TPUv2"
+2018    123        900     220  "TPUv3"
+2021    275        1200    170  "TPUv4"
